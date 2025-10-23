@@ -8,7 +8,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div class="flex justify-between items-center">
             <div>
-              <h1 class="text-2xl font-bold text-slate-900">MiChen API 开放平台</h1>
+              <div class="flex items-center gap-2">
+                <img :src="LOGO" class="size-5" />
+
+                <h1 class="text-2xl font-bold text-slate-900">
+                  MiChen API 开放平台</h1>
+              </div>
               <p class="text-sm text-slate-600 mt-1">强大的数据接口服务</p>
             </div>
             <div v-if="!isLoggedIn" class="flex gap-3">
@@ -131,7 +136,7 @@
                   <component :is="api.icon" class="w-6 h-6 text-blue-600" />
                   <h3 class="text-lg font-semibold text-slate-900">{{ api.name }}</h3>
                   <span class="px-3 py-1 text-sm font-medium rounded" :class="getMethodClass(api.method)">{{ api.method
-                    }}</span>
+                  }}</span>
                 </div>
 
                 <p class="text-slate-600 mb-4">{{ api.description }}</p>
@@ -253,6 +258,7 @@
 import { useMutation, useQuery } from '@tanstack/vue-query';
 import { Copy, Lock } from 'lucide-vue-next';
 import { computed, ref, watch } from 'vue';
+import LOGO from '../public/logo.svg';
 import ApiCard from './components/ApiCard.vue';
 import { loginApi, registerApi } from './service/AuthService';
 import { getIntroData } from './service/IntroService';
