@@ -6,7 +6,7 @@ html: {
     title: 'MiChen Open API',
     favicon: './public/logo.svg',
     appIcon: {
-      name: 'MiChen Wall',
+      name: 'MiChen Open API',
       icons: [
         { src: './public/logo.svg' },
       ],
